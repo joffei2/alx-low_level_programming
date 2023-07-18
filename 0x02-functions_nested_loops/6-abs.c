@@ -1,10 +1,11 @@
 #include "main.h"
-  2 /**
-  3   * main - Entry point 
-  4   * Description:  
-  5   * Return: Always 0 (Success)
-  6   */
-  int _abs(int n)
+
+/**
+ * _abs - computes the absolute value of an integer
+ * @n: the int to check
+ * Return: the absolute value of int
+ */
+int _abs(int n)
 {
 	if (n >= 0)
 	{

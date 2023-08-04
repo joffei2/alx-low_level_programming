@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _strncpy - copy a string
+ * _strncpy - program  copy a string
  * @dest: input value
  * @src: input value
  * @n: input value
@@ -9,18 +9,18 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int j;
+	int x;
 
-	j = 0;
-	while (j < n && src[j] != '\0')
+	x = 0;
+	while (x < n && src[x] != '\0')
 	{
-		dest[j] = src[j];
-		j++;
+		dest[x] = src[x];
+		x++;
 	}
-	while (j < n)
+	while (x < n)
 	{
-		dest[j] = '\0';
-		j++;
+		dest[x] = '\0';
+		x++;
 	}
 
 	return (dest);

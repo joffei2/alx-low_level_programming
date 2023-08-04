@@ -3,18 +3,18 @@
 
 /**
  * _strchr - Entry point
- * @s: input
- * @c: input
+ * @s: input value
+ * @c: input value
  * Return: Always 0 (Success)
  */
 char *_strchr(char *s, char c)
 {
-	int i = 0;
+	int x = 0;
 
-	for (; s[i] >= '\0'; i++)
+	for (; s[x] >= '\0'; x++)
 	{
-		if (s[i] == c)
-			return (&s[i]);
+		if (s[x] == c)
+			return (&s[x]);
 	}
 	return (0);
 }

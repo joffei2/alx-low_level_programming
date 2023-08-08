@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
 /**
  * count_word - helper function to count the number of words in a string
@@ -27,26 +27,25 @@ int count_word(char *s)
 
 	return (w);
 }
-
 /**
- * strtow - splits a string into words
+ * **strtow - splits a string into words
  * @str: string to split
  *
  * Return: pointer to an array of strings (Success)
- *         or NULL (Error)
+ * or NULL (Error)
  */
 char **strtow(char *str)
 {
 	char **matrix, *tmp;
-	int i, k = 0, len = 0, words, c = 0, start = 0, end;
+	int i, k = 0, len = 0, words, c = 0, start, end;
 
-	while (str[len])
+	while (*(str + len))
 		len++;
 	words = count_word(str);
 	if (words == 0)
 		return (NULL);
 
-	matrix = (char **)malloc(sizeof(char *) * (words + 1));
+	matrix = (char **) malloc(sizeof(char *) * (words + 1));
 	if (matrix == NULL)
 		return (NULL);
 
@@ -57,10 +56,9 @@ char **strtow(char *str)
 			if (c)
 			{
 				end = i;
-				tmp = (char *)malloc(sizeof(char) * (c + 1));
+				tmp = (char *) malloc(sizeof(char) * (c + 1));
 				if (tmp == NULL)
 					return (NULL);
-
 				while (start < end)
 					*tmp++ = str[start++];
 				*tmp = '\0';
@@ -77,21 +75,3 @@ char **strtow(char *str)
 
 	return (matrix);
 }
-
-int main(void)
-{
-	char **tab;
-	int i;
-
-	tab = strtow("      ALX School         #cisfun      ");
-	if (tab == NULL)
-		return (1);
-	for (i = 0; tab[i] != NULL; i++)
-	{
-		printf("%s\n", tab[i]);
-		free(tab[i]);
-	}
-	free(tab);
-	return (0);
-}
-

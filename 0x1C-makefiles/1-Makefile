@@ -1,6 +1,6 @@
 # gcc and some variables
 
-cc = gcc
+CC = gcc
 SRC = main.c schoo.c
 
 all: ${SRC}

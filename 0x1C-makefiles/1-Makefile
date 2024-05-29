@@ -1,0 +1,7 @@
+# gcc and some variables
+
+cc = gcc
+SRC = main.c schoo.c
+
+all: ${SRC}
+	${cc} ${SRC} -o school
